@@ -1,0 +1,253 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 49152,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 8730,
+      "max": [
+        0.602256238460541,
+        1.00000011920929,
+        0.662190496921539
+      ],
+      "min": [
+        -0.60225635766983,
+        -1.0,
+        -0.662190437316895
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 8730,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 8730,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Substance Painter 2019.1.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 196608,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 104760,
+      "byteOffset": 196608,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 104760,
+      "byteOffset": 301368,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 69840,
+      "byteOffset": 406128,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 475968,
+      "uri": "gagukok_tulipchair_tablechair.bin"
+    }
+  ],
+    "scene": 0,
+  "extensions": {
+    "KHR_materials_variants": {
+      "variants": [
+          {"name": "pink"},
+          {"name": "gray" },
+          {"name": "blue" }
+        ]
+    }
+  },
+  "extensionsUsed": [
+    "KHR_materials_variants"
+  ],
+  "images": [
+    {
+      "uri": "lambert2_baseColor.png"
+    },
+    {
+      "uri": "lambert2_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "lambert2_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "name": "lambert2",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },  
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "name": "lambert2",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      }, 
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "name": "lambert2",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      }, 
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "gagukok_tulipchair_tablechair",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+		  "extensions": {
+            "KHR_materials_variants": {
+              "mappings": [
+                {
+                  "material": 0,
+                  "variants": [
+                    0
+                  ]
+                },
+                {
+                  "material": 1,
+                  "variants": [
+                    1
+                  ]
+                },
+                {
+                  "material": 2,
+                  "variants": [
+                    2
+                  ]
+                }
+              ]
+            }
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "root",
+      "scale": [
+        42.7681884765625,
+        42.7681884765625,
+        42.7681884765625
+      ],
+      "translation": [
+        0.0152969360351563,
+        42.823070526123,
+        -1.45697021484375
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "gagukok_tulipchair_tablechair"
+    },
+    {
+      "mesh": 0,
+      "name": "gagukok_tulipchair_tablechair"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
