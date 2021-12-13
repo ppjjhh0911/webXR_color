@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+  <style>
+  input {
+      margin: .8rem;
+  }
+
+  .controls1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    bottom: 30px;
+    left: 8px;
+  }
+  </style>
+  <body>
+    <!-- <model-viewer> HTML element -->
+      <model-viewer id="gagukok_tulipchair_tablechair" camera-controls src="https://xr-box.s3.ap-northeast-2.amazonaws.com/shop_file/GoogleModelviewer_20211213/webXR_test/gagukok_tulipchair_tablechair_dfdf.gltf" ar ar-modes="webxr scene-viewer quick-look" alt="A 3D model of a Shoe">
+        <div class="controls1">
+          <div>Colorpicker        :    <input type="color" id="colorWell" name="head"
+                 value="#e66465"></div>
+        </div>
+      </model-viewer>
+    
+      <script>
+        //3번째 컬러피커..
+        const modelViewerColor = document.querySelector("model-viewer#gagukok_tulipchair_tablechair");
+        var colorWell;
+        var defaultColor = "#ffffff";
+        window.addEventListener("load", startup, false);
+        function startup() {
+        colorWell = document.querySelector("#colorWell");
+        colorWell.value = defaultColor;
+        colorWell.addEventListener("input", updateFirst, false);
+        colorWell.addEventListener("change", updateAll, false);
+        colorWell.select();}
+
+        function hexToRgbA(hex){
+                  var c;
+                  if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+                      c= hex.substring(1).split('');
+                      if(c.length== 3){
+                          c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+                      }
+                      c= '0x'+c.join('');
+                      one=(c>>16)&255
+                      two=(c>>8)&255
+                      three=c&255
+                      return [((c>>16)&255)/255, ((c>>8)&255)/255, (c&255)/255].join(',')+',1';
+                  }
+                  throw new Error('Bad Hex');
+              };
+              function hexToDec(hexString){
+                return parseInt(hexString, 16);
+            }
+
+        function updateFirst(event) {
+        var p = document.querySelector("#color-controls1");
+        const colorString = event.target.value;
+        const hextodemi=colorString.split('#')
+        a=hexToRgbA(colorString)
+        const color = a.split(',')
+              .map(numberString => parseFloat(numberString));
+        console.log('Changing color to: ', color);
+        const [material] = modelViewerColor.model.materials;
+        material.pbrMetallicRoughness.setBaseColorFactor(color);
+      };
+      </script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </body>
+</html>
